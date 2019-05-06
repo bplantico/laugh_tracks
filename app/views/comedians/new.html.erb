@@ -1,0 +1,18 @@
+
+<%= form_for(@comedian) do |form| %>
+  <p>
+    <%= form.label :name %><br />
+    <%= form.text_field :name %>
+  </p>
+  <p>
+    <%= form.label :age %><br />
+    <%= form.text_area :age %>
+  </p>
+  <p>
+    <%= form.label :city %><br />
+    <%= form.text_area :city %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
