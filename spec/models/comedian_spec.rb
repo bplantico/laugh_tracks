@@ -12,5 +12,7 @@ describe Comedian, type: :model do
   describe 'relationships' do
     it { should have_many :specials }
   end
-  
+
+  # You have model methods, so you should be testing their functionality here!
+
 end

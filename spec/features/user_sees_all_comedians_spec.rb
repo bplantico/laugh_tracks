@@ -24,6 +24,8 @@ RSpec.describe "user sees all comedians" do
 
       visit '/comedians'
 
+      #I would use a within here to make sure the specials are showing up under the correct comedian.
+
       expect(page).to have_content(special_1.name)
       expect(page).to have_content(special_2.name)
       expect(page).to have_content(special_3.name)
@@ -97,6 +99,7 @@ RSpec.describe "user sees all comedians" do
       click_button ('Create Comedian')
 
       visit '/comedians'
+      # When you click the button, you should already be redirected to the index page, so I would not visit it again, I would just expect that my current_path is the index (comedians_path)
 
       expect(page).to have_content 'Federicio'
       expect(page).to have_content 'Age: 644'

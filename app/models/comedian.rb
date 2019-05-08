@@ -14,6 +14,7 @@ class Comedian < ApplicationRecord
       average(:age).to_i
     else
       by_age(age).average(:age).to_i
+      # if you make the change noted in the controller, you won't need to redo the 'by_age' here, you could just call 'average(:age).to_i' on the subset of Comedians
     end
   end
 
@@ -23,6 +24,7 @@ class Comedian < ApplicationRecord
       select(:city).distinct(:city).pluck(:city).join(", ")
     else
       by_age(for_whom_are_yrs_old).select(:city).distinct(:city).pluck(:city).join(", ")
+      # similar to above, if you make the change in the controller, you won't need to re-filter by_age
     end
 
   end

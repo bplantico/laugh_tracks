@@ -14,6 +14,15 @@ class ComediansController < ApplicationController
       @cities = Comedian.cities(params[:age])
       @comedians = Comedian.by_age(params[:age])
     end
+
+    # I would change the order of the iVar assignment above so that the average age and cities reflect only the comedians on the page (in case of filtering). It would look like this:
+    # if params[:age] == nil
+    #   @comedians = Comedian.all
+    # else
+    #   @comedians = Comedian.by_page(params[:age])
+    # end
+    # @average_age = @comedians.average_age(params[:age])
+    # @cities = @comedians.cities
   end
 
   def new
